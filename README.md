@@ -1,5 +1,9 @@
 # Enlace-bipartito-de-trenes
-Se analiza la posible relación de rutas de trenes con zona de acuerdo a paramétros como la demanda, la cantidad de estaciones, la distancia de la ruta y el un factor socioeconómico obtenido apartir del INEGI. Se hace la comparción entre un módelo clásico y uno cuántico y se obtienen la preponderancia de la ruta según los paramétros antes dichos.
+
+Este proyecto aborda el diseño, modelado e implementación de un sistema de optimización combinatoria basado en **Cómputo Cuántico Variacional** para resolver un problema de **Matching Bipartito Estricto de $4 \times 4$** enfocado en la infraestructura ferroviaria de pasajeros de la zona centro-occidente de México.
+
+
+
 # Proyecto QUBO-QAOA: matching bipartito 4x4
 
 ## Dataset
@@ -36,6 +40,15 @@ $$\text{PIB}_{\text{Ruta Fragmento}} = Factor_{m} \times \text{PIBE}_{\text{Ofic
 
 #### Paso 4: Consolidación interestatal y agregación final
 Para los corredores que atraviesan más de un estado (como los ejes hacia Querétaro y Guanajuato), se ejecutó el cálculo de forma aislada para cada entidad federativa y finalmente se sumaron todos los subtotales para arrojar la estimación del **PIB global anual de la ruta** ($\sum \text{PIB}_{\text{Ruta Fragmento}}$).
+
+---
+
+## 🗺️ Metodología de Obtención de Distancias Geográficas
+
+Dado que el modelo requiere evaluar la infraestructura física real de los trayectos ferroviarios para calcular el indicador de **Densidad de Accesibilidad** ($\text{Estaciones} / \text{Distancia}$), se utilizó la plataforma de **Google Maps** como herramienta de aproximación geográfica bajo los siguientes criterios técnicos:
+
+1. **Simulación de Trazado de Vía:** Se tomaron como referencia los nodos ferroviarios terminales exactos (ej. Estación Buenavista, HUB Logístico AIFA, terminales metropolitanas estatales). Al no estar integradas todas las redes ferroviarias de pasajeros de forma ordinaria en los mapas comerciales automatizados, se utilizaron los corredores de carreteras de alta velocidad (como la Autopista México-Querétaro 57D, México-Irapuato 45D y México-Pachuca 85D) como *proxies* directos del derecho de vía y longitudes de traslado físico.
+2. **Control de Desviación Ferroviaria:** Las distancias carreteras obtenidas se registran como el límite superior de la longitud de la ruta. En la práctica ferroviaria, los trazos de vía tienden a ser ligeramente más directos (menor kilometraje) debido a la ausencia de distribuidores viales urbanos, o ligeramente mayores por restricciones de pendiente extrema, por lo que los valores de Maps representan la aproximación comercial más sólida disponible.
 
 ---
 
