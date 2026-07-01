@@ -85,13 +85,25 @@ La siguiente tabla resume los criterios y los valores de PIB consolidado anual r
 
 * **Columnas usadas:** Demanda anual base, N° de estaciones, Distancia de la ruta (km), Factor Socioeconómico.
 * **Fórmula exacta de $S_{ij}$:** Para elementos de la diagonal principal ($i = j$):
+
   $$S_{ii} = \text{Demanda}_i \times \left( \alpha \cdot \frac{\text{Estaciones}_i}{\text{Distancia}_i} + \beta \cdot \text{Factor Socioeconómico}_i \right)$$
+  
   Para elementos fuera de la diagonal ($i \neq j$):
   $$S_{ij} = 0.0$$
-  *(Parámetros del cálculo actual: $\alpha = 0.6$, $\beta = 0.4$)*
+  
+  (Parámetros del cálculo actual: $\alpha = 0.6$, $\beta = 0.4$)
+  
 * **Normalización aplicada:** Escalamiento lineal multi-criterio combinando la densidad física de estaciones ($\text{estaciones}/\text{km}$) con un índice ponderado del impacto del PIB regional (Factor Socioeconómico).
 * **Matriz S 4x4 (Valores de simulación):**
-  $$\begin{pmatrix} 52515.78 & 0.00 & 0.00 & 0.00 \\ 0.00 & 5460.74 & 0.00 & 0.00 \\ 0.00 & 0.00 & 131.46 & 0.00 \\ 0.00 & 0.00 & 0.00 & 6019.25 \end{pmatrix}$$
+  
+$$
+\begin{pmatrix} 
+52515.78 & 0.00 & 0.00 & 0.00 \\
+0.00 & 5460.74 & 0.00 & 0.00 \\ 
+0.00 & 0.00 & 131.46 & 0.00 \\ 
+0.00 & 0.00 & 0.00 & 6019.25 
+\end{pmatrix}
+$$
 
 ---
 
@@ -137,7 +149,6 @@ La siguiente tabla resume los criterios y los valores de PIB consolidado anual r
 1. Dirígete a [Google Colab](https://colab.research.google.com).
 2. Selecciona la pestaña **GitHub**.
 3. Pega la URL de este repositorio y selecciona el archivo `.ipynb` del proyecto.
-4. Si el repositorio es privado, asegúrate de autorizar los permisos de lectura a Colab.
 
 ### Instrucciones para ejecutar todas las celdas sin errores:
 1. Una vez abierto el notebook, ve al menú superior y selecciona **Entorno de ejecución > Cambiar tipo de entorno de ejecución**, asegurándote de contar con los recursos estándar de Python 3.
