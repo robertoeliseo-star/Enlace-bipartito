@@ -8,7 +8,7 @@ Se analiza la posible relación de rutas de trenes con zona de acuerdo a paramé
 * **Fuente oficial o confiable:** Agencia Reguladora del Transporte Ferroviario (ARTF), INEGI (Censos Económicos) y datos operativos históricos de la extensión del Tren Suburbano.
 * **Institución responsable:** Secretaría de Infraestructura, Comunicaciones y Transportes (SICT) / Instituto Nacional de Estadística y Geografía (INEGI).
 * **URL de la fuente:** https://www.gob.mx/artf | https://www.inegi.org.mx
-* **URL raw del CSV usado en data/:** `https://raw.githubusercontent.com/[TU_USUARIO]/[TU_REPOSITORIO]/main/data/rutas_ferroviarias.csv` *(Reemplaza con tu enlace real)*
+* **URL raw del CSV** usado en data/: Se obtiene en la carpeta rutas_ferroviarias.xlsx
 * **Licencia o condiciones de uso:** Datos de uso público abierto con fines de investigación académica.
 * **Fecha de consulta:** Junio 2026
 * **Dominio del problema:** Optimización de transporte, planeación de infraestructura ferroviaria y asignación de recursos socioeconómicos.
@@ -74,8 +74,6 @@ Se analiza la posible relación de rutas de trenes con zona de acuerdo a paramé
   * **Probabilidad ideal de factibilidad:** `2.63%` (`0.02636`)
   * **Probabilidad ideal del óptimo clásico:** `0.11%` (`0.00115`)
 * **Comparación clásico vs QAOA local:** El algoritmo QAOA ejecutado localmente logró encontrar el estado fundamental óptimo en su mejor observación (Energía `-64127.23`), igualando con precisión el resultado del solver clásico exacto. No obstante, debido a la naturaleza estocástica del algoritmo y la penalización de las restricciones en el Hamiltoniano, la probabilidad ideal de colapsar directamente en el óptimo global es del 0.11%, lo que subraya la complejidad del paisaje energético cuántico para problemas combinatorios acotados.
-* **Si se usó hardware real o pipeline híbrido, comparación adicional:** Simulación local cuántica ideal por medio de vectores de estado.
-
 ---
 
 ## Ética y limitaciones
