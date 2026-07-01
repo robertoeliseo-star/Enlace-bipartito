@@ -1,6 +1,6 @@
 ## Metodología de Estimación de Datos Socioeconómicos
 
-Dado que el INEGI no calcula el Producto Interno Bruto (PIB) directamente por municipio de manera anual ordinaria (sino que lo hace centralizado para las 32 entidades federativas), la aproximación económica de los corredores ferroviarios se obtuvo mediante un **método de desagregación y distribución del valor añadido espacial** empleando datos censales locales $[1, 2]$.
+Dado que gel INEGI no calcula el Producto Interno Bruto (PIB) directamente por municipio de manera anual ordinaria (sino que lo hace centralizado para las 32 entidades federativas), la aproximación económica de los corredores ferroviarios se obtuvo mediante un **método de desagregación y distribución del valor añadido espacial** empleando datos censales locales $[1, 2]$.
 
 ### 📐 Algoritmo de Distribución en 4 Pasos
 
