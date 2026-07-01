@@ -152,6 +152,6 @@ $$
 
 ### Instrucciones para ejecutar todas las celdas sin errores:
 1. Una vez abierto el notebook, ve al menú superior y selecciona **Entorno de ejecución > Cambiar tipo de entorno de ejecución**, asegurándote de contar con los recursos estándar de Python 3.
-2. Sube el archivo `rutas_ferroviarias.csv` que se encuentra en la carpeta `data/` al menú lateral de archivos de Colab (o clona el repositorio directamente usando `!git clone`).
+2. Sube el archivo `rutas_ferroviarias.xlsx` que se encuentra en la carpeta `data/` al menú lateral de archivos de Colab (o clona el repositorio directamente usando `!git clone`).
 3. Ejecuta la primera celda dedicada a la instalación de dependencias requeridas (ej. `!pip install qiskit pandas numpy`).
 4. Selecciona **Entorno de ejecución > Ejecutar todas las celdas** (`Ctrl + F9`). Las pruebas automáticas (`assert`) validarán las dimensiones de los DataFrames y la matriz de pesos sin detener la ejecución.
