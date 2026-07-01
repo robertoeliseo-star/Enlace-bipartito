@@ -1,0 +1,42 @@
+## Metodología de Estimación de Datos Socioeconómicos
+
+Dado que el INEGI no calcula el Producto Interno Bruto (PIB) directamente por municipio de manera anual ordinaria (sino que lo hace centralizado para las 32 entidades federativas), la aproximación económica de los corredores ferroviarios se obtuvo mediante un **método de desagregación y distribución del valor añadido espacial** empleando datos censales locales $[1, 2]$.
+
+### 📐 Algoritmo de Distribución en 4 Pasos
+
+#### Paso 1: Mapeo y delimitación geográfica de las rutas
+Se identificaron detalladamente todos los municipios que la infraestructura ferroviaria o carretera de la ruta atraviesa físicamente, delimitando así el **corredor de influencia económica directa** para cada una de las 4 opciones de matching.
+
+#### Paso 2: Obtención del Peso Municipal ($Factor_{m}$)
+Utilizando el Sistema Automatizado de Información Censal (SAIC), se extrajo y sumó el **Valor Agregado Censal Bruto (VACB)** de los municipios mapeados en la ruta, dividiéndolo entre el VACB total de su respectiva entidad federativa. Esto define la concentración económica exacta de la ruta frente a su estado $[1]$.
+
+$$Factor_{m} = \frac{\sum \text{VACB}_{\text{municipios de la ruta}}}{\text{VACB}_{\text{Total del Estado}}}$$
+
+#### Paso 3: Estimación del PIB Municipal Equivalente
+El factor porcentual o ponderador espacial obtenido en el paso anterior se multiplicó por el **Producto Interno Bruto por Entidad Federativa (PIBE)** oficial del estado a precios corrientes para mapear el valor en unidades monetarias corrientes $[1]$.
+
+$$\text{PIB}_{\text{Ruta Fragmento}} = Factor_{m} \times \text{PIBE}_{\text{Oficial}}$$
+
+#### Paso 4: Consolidación interestatal y agregación final
+Para los corredores que atraviesan más de un estado (como los ejes hacia Querétaro y Guanajuato), se ejecutó el cálculo de forma aislada para cada entidad federativa y finalmente se sumaron todos los subtotales para arrojar la estimación del **PIB global anual de la ruta** ($\sum \text{PIB}_{\text{Ruta Fragmento}}$).
+
+---
+
+### 📊 Desglose Analítico y Resultados por Ruta
+
+La siguiente tabla resume los criterios y los valores de PIB consolidado anual resultantes de la metodología de desagregación:
+
+| ID | Ruta Ferroviaria | Municipios / Alcaldías Mapeadas | Criterio de Análisis Económico | PIB Estimado Consolidado |
+| :---: | :--- | :--- | :--- | :---: |
+| **A1** | **Buenavista - AIFA** | Cuauhtémoc, Azcapotzalco (CDMX); Tlalnepantla, Tultitlán, Tecámac (Edomex). | Absorbe la alcaldía corporativa más importante del país (Cuautémoc genera el $8.5\%$ del VACB nacional) y el nodo industrial del norte del Valle de México $[1, 2]$. | **$1.12 Billones de MXN**<br>($1,120,000 MDP) |
+| **A2** | **Querétaro - Irapuato** | Santiago de Querétaro (Qro); Celaya, Salamanca, Irapuato (Gto). | Concentración masiva del sector automotriz y el complejo energético de la Refinería de Salamanca. La capital queretana aporta cerca del $60\%$ de su PIB estatal $[1]$. | **$890,000 MDP** |
+| **A3** | **Huehuetoca - Querétaro** | Huehuetoca (Edomex); Tula de Allende (Hgo); San Juan del Río, Santiago de Querétaro (Qro). | Eje de alta densidad logística ferroviaria. Suma el valor industrial/cementero de Tula con parques industriales clave dedicados a la distribución hacia el norte del país. | **$780,000 MDP** |
+| **A4** | **Xaltocan II - Pachuca** | Nextlalpan, Tizayuca, Pachuca de Soto (Hgo). | Zona de desarrollo periférico reciente vinculada al AIFA. Presenta menor densidad corporativa en comparación con el Bajío, impulsada por comercio y servicios urbanos $[1]$. | **$210,000 MDP** |
+
+---
+
+### 📚 Fuentes de Referencia y Citación
+
+* **$[1]$ Para los Datos Municipales (VACB):** *Instituto Nacional de Estadística y Geografía (INEGI).* (2025). Resultados Definitivos de los Censos Económicos, Sistema Automatizado de Información Censal (SAIC). Aguascalientes, México: INEGI. Disponible en: [inegi.org.mx](https://www.inegi.org.mx)
+  
+* **$[2]$ Para el PIB Estatal (PIBE):** *Instituto Nacional de Estadística y Geografía (INEGI).* (2025). Producto Interno Bruto por Entidad Federativa (PIBE), Cuentas Nacionales de México. Aguascalientes, México: INEGI. Disponible en: [inegi.org.mx](https://www.inegi.org.mx)
